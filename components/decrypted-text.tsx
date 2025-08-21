@@ -15,8 +15,9 @@ export function DecryptedText({
 }: DecryptedTextProps) {
   const [displayText, setDisplayText] = useState("");
   const [hasAnimated, setHasAnimated] = useState(false);
-  const intervalRef = useRef<NodeJS.Timeout>();
-  const elementRef = useRef<HTMLSpanElement>(null);
+
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const elementRef = useRef<HTMLDivElement | null>(null);
 
   const chars = "!<>-_\\/[]{}—=+*^?#________";
 
@@ -56,7 +57,9 @@ export function DecryptedText({
       );
 
       if (iteration >= text.length) {
-        clearInterval(intervalRef.current);
+        if (intervalRef.current !== null) {
+          clearInterval(intervalRef.current);
+        }
         setDisplayText(text);
       }
 

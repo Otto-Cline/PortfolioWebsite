@@ -10,7 +10,7 @@ interface TrueFocusTextProps {
 export function TrueFocusText({ text, className = "" }: TrueFocusTextProps) {
   const [displayText, setDisplayText] = useState(text);
   const [isAnimating, setIsAnimating] = useState(false);
-  const intervalRef = useRef<NodeJS.Timeout>();
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const chars =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
@@ -36,7 +36,9 @@ export function TrueFocusText({ text, className = "" }: TrueFocusTextProps) {
       );
 
       if (iteration >= text.length) {
-        clearInterval(intervalRef.current);
+        if (intervalRef.current !== null) {
+          clearInterval(intervalRef.current);
+        }
         setIsAnimating(false);
         setDisplayText(text);
       }
