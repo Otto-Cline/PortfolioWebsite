@@ -1,14 +1,20 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Mail, Send } from "lucide-react"
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Mail, Send } from "lucide-react";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -16,21 +22,27 @@ export function ContactForm() {
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Create mailto link with form data
-    const mailtoLink = `mailto:otto.cline@northeastern.edu?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\n${formData.message}`)}`
-    window.location.href = mailtoLink
-  }
+    const mailtoLink = `mailto:otto.cline@northeastern.edu?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `From: ${formData.name} (${formData.email})\n\n${formData.message}`
+    )}`;
+    window.location.href = mailtoLink;
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
     <Card className="max-w-2xl mx-auto">
@@ -39,7 +51,9 @@ export function ContactForm() {
           <Mail className="w-6 h-6 text-accent" />
           Get In Touch
         </CardTitle>
-        <CardDescription>Interested in discussing opportunities? I'd love to hear from you!</CardDescription>
+        <CardDescription>
+          Interested in discussing opportunities? I'd love to hear from you!
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -98,5 +112,5 @@ export function ContactForm() {
         </form>
       </CardContent>
     </Card>
-  )
+  );
 }

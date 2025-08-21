@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 export default function Portfolio() {
-  const skills = [
+  /**const skills = [
     "Java",
     "Python",
     "TypeScript",
@@ -38,7 +38,7 @@ export default function Portfolio() {
     "Neon",
     "Node.js",
     "Git",
-  ];
+  ];**/
 
   const projects = [
     {

@@ -75,7 +75,7 @@ export function ExperienceCard({
             <img
               src={image}
               alt={`${title} at ${company}`}
-              className="w-full h-50 object-cover rounded-lg"
+              className="object-cover"
             />
           </div>
         )}
