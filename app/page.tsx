@@ -1,102 +1,545 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { FocusEffect } from "@/components/focus-effect";
+import { TrueFocusText } from "@/components/true-focus-text";
+import { DecryptedText } from "@/components/decrypted-text";
+import { ProjectCard } from "@/components/project-card";
+import { ExperienceCard } from "@/components/experience-card";
+import { ContactForm } from "@/components/contact-form";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  GraduationCap,
+  Star,
+  Download,
+} from "lucide-react";
 
-export default function Home() {
+export default function Portfolio() {
+  const skills = [
+    "Java",
+    "Python",
+    "TypeScript",
+    "React",
+    "PostgreSQL",
+    "MySQL",
+    "Flask",
+    "HTML/CSS",
+    "Docker",
+    "Supabase",
+    "Neon",
+    "Node.js",
+    "Git",
+  ];
+
+  const projects = [
+    {
+      title: "Picture Collection Database",
+      description:
+        "Flask web application for NYPL Picture Collection with NLP-powered search",
+      image: "/pcdb.png",
+      technologies: [
+        "Flask",
+        "Python",
+        "PostgreSQL",
+        "NLP",
+        "Sentence Transformers",
+      ],
+      highlights: [
+        "Migrated 11K+ metadata records from Excel to PostgreSQL",
+        "Implemented NLP pipeline for semantic search capabilities",
+        "Reduced librarian workload by ~5 hours/week",
+        "Deployed production Flask application",
+      ],
+      githubUrl: "https://github.com/Otto-Cline/PictureCollectionDB", // Added placeholder GitHub URL
+      liveUrl: "https://picturecollectiondb.onrender.com", // Added placeholder live URL
+    },
+    {
+      title: "Stock Sentinel: Market Sentiment Analyzer",
+      description:
+        "Java-based tool that analyzes stock market sentiment using news articles",
+      image: "/corenlp-logo.png",
+      technologies: ["Java", "Stanford CoreNLP", "NewsAPI"],
+      highlights: [
+        "Scrapes the most recent finance related articles from NewsAPI",
+        "Uses the Stanford CoreNLP library to analyze sentiment of each article",
+        "Generates a sentiment score for each stock based on the articles using custom weights",
+        "Aggregates scores into a market sentiment conclusion",
+      ],
+      githubUrl: "https://github.com/Otto-Cline/StockSentinel", // Added placeholder live URL
+    },
+    {
+      title: "ClubStop Platform (Still in Development)",
+      description:
+        "React-based platform for college students to discover and rate campus clubs",
+      technologies: ["React", "TypeScript", "MySQL", "Node.js"],
+      highlights: [
+        "Co-founded student-focused web platform",
+        "Built responsive search and filtering system",
+        "Implemented user review and rating functionality",
+        "Designed intuitive navigation and user experience",
+      ],
+      githubUrl: "https://github.com/guha-mahesh/ClubStop", // Added placeholder GitHub URL
+    },
+    {
+      title: "Survey Matching Platform",
+      description:
+        "3rd place hackathon project connecting professors with research participants",
+      image: "/survayyy.jpg",
+      technologies: ["React", "TypeScript", "API Integration"],
+      highlights: [
+        "Won 3rd place at STHacks for functionality and usability",
+        "Built matching algorithm for survey participants",
+        "Created responsive user interface in 48 hours",
+        "Solved real academic research problem with a partner",
+      ],
+      liveUrl: "https://devpost.com/software/go-5dnxvk",
+      githubUrl: "https://github.com/guha-mahesh/Survayyy",
+    },
+  ];
+
+  const experiences = [
+    {
+      title: "Computer Science and Math Tutor",
+      company: "Knack Tutoring",
+      location: "Boston, MA",
+      duration: "March 2025 – Present",
+      description: [
+        "Tutored students in Calculus and Java, tailoring support to individual learning needs",
+        "Maintained a 5-star average rating across 14 two-hour sessions",
+        "Helped 2 students improve from C/B- range to A grades",
+        "Completed Knack's training certification on effective peer tutoring",
+      ],
+      skills: ["Java", "Calculus", "Teaching", "Problem Solving"],
+      image: "/knack.jpeg",
+    },
+    {
+      title: "New York Public Library Page",
+      company: "General Periodicals Division",
+      location: "Manhattan, NY",
+      duration: "July 2023 – April 2024",
+      description: [
+        "Supported 200+ daily patrons by issuing library cards, checking out periodicals, and answering research requests",
+        "Located rare documents using NYPL's database for academic and international researchers",
+        "Organized and maintained a collection of 10,000+ periodicals, improving accessibility and retrieval efficiency",
+      ],
+      skills: [
+        "Customer Service",
+        "Database Management",
+        "Research",
+        "Organization",
+      ],
+      image: "/nypl.jpg",
+    },
+    {
+      title: "Captain, Sting Robotics Team",
+      company: "Baccalaureate School for Global Education",
+      location: "Astoria, NY",
+      duration: "October 2022 – February 2024",
+      description: [
+        "Developed Java-based control logic enabling omnidirectional movement",
+        "Led team to 1st place win at FTC qualifier (32 schools)",
+        "Directed 22 team members in assembly and development of robot logic",
+        "Managed team finances and coordinated project timelines",
+      ],
+      skills: ["Java", "Leadership", "Project Management", "Robotics"],
+      image: "/robotics.png",
+    },
+  ];
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section with Focus Effect */}
+      <FocusEffect className="min-h-screen flex items-center justify-center">
+        <div className="container mx-auto px-4 py-20">
+          <div className="max-w-6xl mx-auto text-center space-y-8">
+            <div className="space-y-8">
+              <h1
+                className="font-serif text-[8rem] md:text-[10rem] font-bold text-foreground 
+                bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent"
+                style={{
+                  margin: "10px",
+                }}
+              >
+                <TrueFocusText text="Otto Cline" />
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground font-medium">
+                CS & Finance at Northeastern University
+              </p>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Building real software that impacts real people (and doing other
+                cool stuff).
+              </p>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button size="lg" asChild>
+                <a href="#contact">
+                  <Mail className="w-5 h-5 mr-2" />
+                  Get In Touch
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a
+                  href="https://github.com/otto-cline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="w-5 h-5 mr-2" />
+                  GitHub
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a
+                  href="https://linkedin.com/in/otto-cline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin className="w-5 h-5 mr-2" />
+                  LinkedIn
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a
+                  href="/Otto_Cline_Resume.pdf"
+                  download="Otto_Cline_Resume.pdf"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Resume
+                </a>
+              </Button>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-accent">3.81</div>
+                <div className="text-sm text-muted-foreground">GPA</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-accent">5★</div>
+                <div className="text-sm text-muted-foreground">
+                  Tutor Rating
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-accent">3rd</div>
+                <div className="text-sm text-muted-foreground">
+                  Hackathon Place
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-accent">1st</div>
+                <div className="text-sm text-muted-foreground">
+                  Robotics Win
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </FocusEffect>
+
+      {/* About Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2
+              className="font-serif text-3xl md:text-4xl font-bold text-center mb-12 
+            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
+            >
+              <DecryptedText text="Some Fun Info About Me" />
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-6">
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <GraduationCap className="w-5 h-5 text-accent" />
+                  <span>Northeastern University • Class of 2028</span>
+                </div>
+
+                <p className="text-lg leading-relaxed">
+                  Hi! My name is Otto I'm a college sophomore and software
+                  developer. I particularly enjoy backend development, and am
+                  currently in the process of strengthening my skills in ML. My
+                  background is mainly in Java but I am versed in a variety of
+                  tools and languages including Python, TypeScript, PostgreSQL,
+                  and more. I love talking and learning about tech and finance,
+                  so feel free to reach out!
+                </p>
+
+                <p className="leading-relaxed">
+                  I'm particularly interested in the intersection of technology
+                  and business, seeking opportunities in software engineering,
+                  tech consulting, and product development.
+                </p>
+
+                <div className="space-y-3">
+                  <h3 className="font-serif text-lg font-semibold">
+                    Some of my interests:
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline">
+                      Music album reviewing ({" "}
+                      <a
+                        href="https://imgur.com/a/3VJtW0x"
+                        className="underline hover:text-blue-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        check out my favorite albums
+                      </a>
+                      )
+                    </Badge>
+                    <Badge variant="outline">Soccer (go spurs)</Badge>
+                    <Badge variant="outline">Philosophy</Badge>
+                    <Badge variant="outline">Stock trading</Badge>
+                  </div>
+                </div>
+              </div>
+
+              <Card className="p-6">
+                <h3 className="font-serif text-xl font-semibold mb-4">
+                  Technical Skills
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <h4 className="font-medium mb-2 text-accent">Languages</h4>
+                    <div className="space-y-1 text-sm">
+                      <div>Java</div>
+                      <div>Python</div>
+                      <div>TypeScript</div>
+                      <div>SQL</div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-2 text-accent">
+                      Technologies
+                    </h4>
+                    <div className="space-y-1 text-sm">
+                      <div>React</div>
+                      <div>Flask</div>
+                      <div>PostgreSQL</div>
+                      <div>Docker</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <h4 className="font-medium mb-2 text-accent">Tools</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Git",
+                      "GitHub",
+                      "Supabase",
+                      "Node.js",
+                      "IntelliJ",
+                      "VSCode",
+                    ].map((tool) => (
+                      <Badge key={tool} variant="secondary" className="text-xs">
+                        {tool}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-8xl mx-auto">
+            <h2
+              className="font-serif text-3xl md:text-4xl font-bold text-center mb-12
+            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
+            >
+              <DecryptedText text="Projects I'm Proud Of" />
+            </h2>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {projects.map((project, index) => (
+                <ProjectCard key={index} {...project} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2
+              className="font-serif text-3xl md:text-4xl font-bold text-center mb-12
+            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
+            >
+              <DecryptedText text="Experience" />
+            </h2>
+
+            <div className="space-y-6">
+              {experiences.map((experience, index) => (
+                <ExperienceCard key={index} {...experience} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2
+              className="font-serif text-3xl md:text-4xl font-bold text-center mb-12
+            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
+            >
+              <DecryptedText text="Education" />
+            </h2>
+
+            <Card className="border-2 border-accent/20">
+              <CardHeader className="text-center">
+                <CardTitle className="font-serif text-2xl">
+                  Northeastern University
+                </CardTitle>
+                <CardDescription className="text-lg">
+                  Khoury College of Computer Sciences
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <GraduationCap className="w-5 h-5 text-accent" />
+                      <span className="font-medium">Bachelor of Science</span>
+                    </div>
+                    <div className="text-muted-foreground">
+                      Computer Science and Business Administration
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-accent" />
+                      <span>Boston, MA</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Star className="w-5 h-5 text-accent" />
+                      <span className="font-medium">GPA: 3.81</span>
+                    </div>
+                    <div className="text-muted-foreground">
+                      Expected Graduation: 2028
+                    </div>
+                    <div className="text-muted-foreground">
+                      September 2024 – Present
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-medium mb-3">Relevant Coursework</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Algorithms and Data Structures",
+                      "Discrete Structures",
+                      "Object Oriented Design",
+                      "Fundamentals of CS I & II",
+                      "Managerial Accounting I & II",
+                    ].map((course) => (
+                      <Badge key={course} variant="outline" className="text-xs">
+                        {course}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2
+              className="font-serif text-3xl md:text-4xl font-bold text-center mb-12
+            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
+            >
+              <DecryptedText text="Let's Connect" />
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-serif text-xl font-semibold mb-4">
+                    Get In Touch
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    I'm actively seeking internship opportunities for Summer
+                    2026 in software engineering, tech consulting, and business
+                    roles. I'd love to discuss how my technical skills and
+                    business acumen can contribute to your team.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-accent" />
+                    <a
+                      href="mailto:ottoclinework@gmail.com"
+                      className="hover:text-accent transition-colors"
+                    >
+                      ottoclinework@gmail.com
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Github className="w-5 h-5 text-accent" />
+                    <a
+                      href="https://github.com/otto-cline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-accent transition-colors"
+                    >
+                      github.com/otto-cline
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Linkedin className="w-5 h-5 text-accent" />
+                    <a
+                      href="https://linkedin.com/in/otto-cline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-accent transition-colors"
+                    >
+                      linkedin.com/in/otto-cline
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <ContactForm />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 border-t">
+        <div className="container mx-auto px-4">
+          <div className="text-center text-muted-foreground">
+            <p>&copy; 2025 Otto Cline. Built with Next.js and Tailwind CSS.</p>
+          </div>
+        </div>
       </footer>
     </div>
   );
