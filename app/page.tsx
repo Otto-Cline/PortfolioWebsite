@@ -24,22 +24,6 @@ import {
 } from "lucide-react";
 
 export default function Portfolio() {
-  /**const skills = [
-    "Java",
-    "Python",
-    "TypeScript",
-    "React",
-    "PostgreSQL",
-    "MySQL",
-    "Flask",
-    "HTML/CSS",
-    "Docker",
-    "Supabase",
-    "Neon",
-    "Node.js",
-    "Git",
-  ];**/
-
   const projects = [
     {
       title: "Picture Collection Database",
