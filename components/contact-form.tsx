@@ -52,7 +52,8 @@ export function ContactForm() {
           Get In Touch
         </CardTitle>
         <CardDescription>
-          Interested in discussing opportunities? I'd love to hear from you!
+          Interested in discussing opportunities? I&apos;d love to hear from
+          you!
         </CardDescription>
       </CardHeader>
       <CardContent>

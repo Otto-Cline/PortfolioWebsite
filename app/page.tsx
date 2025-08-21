@@ -249,7 +249,7 @@ export default function Portfolio() {
                 </div>
 
                 <p className="text-lg leading-relaxed">
-                  Hi! My name is Otto I'm a college sophomore and software
+                  Hi! My name is Otto I&apos;m a college sophomore and software
                   developer. I particularly enjoy backend development, and am
                   currently in the process of strengthening my skills in ML. My
                   background is mainly in Java but I am versed in a variety of
@@ -259,9 +259,9 @@ export default function Portfolio() {
                 </p>
 
                 <p className="leading-relaxed">
-                  I'm particularly interested in the intersection of technology
-                  and business, seeking opportunities in software engineering,
-                  tech consulting, and product development.
+                  I&apos;m particularly interested in the intersection of
+                  technology and business, seeking opportunities in software
+                  engineering, tech consulting, and product development.
                 </p>
 
                 <div className="space-y-3">
@@ -467,10 +467,10 @@ export default function Portfolio() {
                     Get In Touch
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    I'm actively seeking internship opportunities for Summer
-                    2026 in software engineering, tech consulting, and business
-                    roles. I'd love to discuss how my technical skills and
-                    business acumen can contribute to your team.
+                    I&apos;m actively seeking internship opportunities for
+                    Summer 2026 in software engineering, tech consulting, and
+                    business roles. I&apos;d love to discuss how my technical
+                    skills and business acumen can contribute to your team.
                   </p>
                 </div>
 
