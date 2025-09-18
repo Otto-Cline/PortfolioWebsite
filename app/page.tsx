@@ -140,7 +140,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-muted/100">
       {/* Hero Section with Focus Effect */}
       <FocusEffect className="min-h-screen flex items-center justify-center">
         <div className="container mx-auto px-4 py-20">
@@ -148,7 +148,7 @@ export default function Portfolio() {
             <div className="space-y-8">
               <h1
                 className="font-serif text-[8rem] md:text-[10rem] font-bold text-foreground 
-                bg-gradient-to-r from-blue-600 to-blue-900 bg-clip-text text-transparent"
+                bg-gradient-to-r from-teal-600 to-teal-900 bg-clip-text text-transparent"
                 style={{
                   margin: "10px",
                 }}
@@ -156,7 +156,7 @@ export default function Portfolio() {
                 <TrueFocusText text="Otto Cline" />
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-                CS & Finance at Northeastern University
+                CS & Business at Northeastern University
               </p>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Building real software that impacts real people (and doing other
@@ -231,121 +231,136 @@ export default function Portfolio() {
       </FocusEffect>
 
       {/* About Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2
-              className="font-serif text-3xl md:text-4xl font-bold text-center mb-12 
-            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
-            >
-              <DecryptedText text="Some Fun Info About Me" />
-            </h2>
+      <div className="bg-teal-950">
+        <section className="py-20 bg-muted/100 border-4 border-muted/100 rounded-b-[12rem] p-4">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-muted/100 relative font-serif text-3xl md:text-4xl font-bold text-center mb-12">
+                <span className="relative z-10">
+                  <DecryptedText text="Some Fun Info About Me" />
+                </span>
+                <span
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
+                   w-[120%] h-[180%] bg-teal-950 -z-0 rounded-lg rotate-[-2deg]"
+                ></span>
+              </h2>
 
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-6">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <GraduationCap className="w-5 h-5 text-accent" />
-                  <span>Northeastern University • Class of 2028</span>
-                </div>
-
-                <p className="text-lg leading-relaxed">
-                  Hi! My name is Otto I&apos;m a college sophomore and software
-                  developer. I particularly enjoy backend development, and am
-                  currently in the process of strengthening my skills in ML. My
-                  background is mainly in Java but I am versed in a variety of
-                  tools and languages including Python, TypeScript, PostgreSQL,
-                  and more. I love talking and learning about tech and finance,
-                  so feel free to reach out!
-                </p>
-
-                <p className="leading-relaxed">
-                  I&apos;m particularly interested in the intersection of
-                  technology and business, seeking opportunities in software
-                  engineering, tech consulting, and product development.
-                </p>
-
-                <div className="space-y-3">
-                  <h3 className="font-serif text-lg font-semibold">
-                    Some of my interests:
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline">
-                      Music album reviewing ({" "}
-                      <a
-                        href="https://imgur.com/a/3VJtW0x"
-                        className="underline hover:text-blue-600"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        check out my favorite albums
-                      </a>
-                      )
-                    </Badge>
-                    <Badge variant="outline">Soccer (go spurs)</Badge>
-                    <Badge variant="outline">Philosophy</Badge>
-                    <Badge variant="outline">Stock trading</Badge>
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-6">
+                  <div className="flex items-center gap-2 text-muted-foreground">
+                    <GraduationCap className="w-5 h-5 text-accent" />
+                    <span>Northeastern University • Class of 2028</span>
                   </div>
-                </div>
-              </div>
 
-              <Card className="p-6">
-                <h3 className="font-serif text-xl font-semibold mb-4">
-                  Technical Skills
-                </h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <h4 className="font-medium mb-2 text-accent">Languages</h4>
-                    <div className="space-y-1 text-sm">
-                      <div>Java</div>
-                      <div>Python</div>
-                      <div>TypeScript</div>
-                      <div>SQL</div>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-medium mb-2 text-accent">
-                      Technologies
-                    </h4>
-                    <div className="space-y-1 text-sm">
-                      <div>React</div>
-                      <div>Flask</div>
-                      <div>PostgreSQL</div>
-                      <div>Docker</div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-4">
-                  <h4 className="font-medium mb-2 text-accent">Tools</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Git",
-                      "GitHub",
-                      "Supabase",
-                      "Node.js",
-                      "IntelliJ",
-                      "VSCode",
-                    ].map((tool) => (
-                      <Badge key={tool} variant="secondary" className="text-xs">
-                        {tool}
+                  <p className="text-lg leading-relaxed">
+                    Hi! My name is Otto I&apos;m a college sophomore and
+                    software developer. I particularly enjoy backend
+                    development, and am currently in the process of
+                    strengthening my skills in ML. My background is mainly in
+                    Java but I am versed in a variety of tools and languages
+                    including Python, TypeScript, PostgreSQL, and more. I love
+                    talking and learning about tech and finance, so feel free to
+                    reach out!
+                  </p>
+
+                  <p className="leading-relaxed">
+                    I&apos;m particularly interested in the intersection of
+                    technology and business, seeking opportunities in software
+                    engineering, tech consulting, and product development.
+                  </p>
+
+                  <div className="space-y-3">
+                    <h3 className="font-serif text-lg font-semibold">
+                      Some of my interests:
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      <Badge variant="outline">
+                        Music album reviewing ({" "}
+                        <a
+                          href="https://imgur.com/a/3VJtW0x"
+                          className="underline hover:text-teal-600"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          check out my favorite albums
+                        </a>
+                        )
                       </Badge>
-                    ))}
+                      <Badge variant="outline">Soccer (go spurs)</Badge>
+                      <Badge variant="outline">Philosophy</Badge>
+                      <Badge variant="outline">Stock trading</Badge>
+                    </div>
                   </div>
                 </div>
-              </Card>
+
+                <Card className="p-6">
+                  <h3 className="font-serif text-xl font-semibold mb-4">
+                    Technical Skills
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-medium mb-2 text-accent">
+                        Languages
+                      </h4>
+                      <div className="space-y-1 text-sm">
+                        <div>Java</div>
+                        <div>Python</div>
+                        <div>TypeScript</div>
+                        <div>SQL</div>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-2 text-accent">
+                        Technologies
+                      </h4>
+                      <div className="space-y-1 text-sm">
+                        <div>React</div>
+                        <div>Flask</div>
+                        <div>PostgreSQL</div>
+                        <div>Docker</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-4">
+                    <h4 className="font-medium mb-2 text-accent">Tools</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "Git",
+                        "GitHub",
+                        "Supabase",
+                        "Node.js",
+                        "IntelliJ",
+                        "VSCode",
+                      ].map((tool) => (
+                        <Badge
+                          key={tool}
+                          variant="secondary"
+                          className="text-xs"
+                        >
+                          {tool}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </Card>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20">
+      <section id="projects" className="py-20 bg-teal-950">
         <div className="container mx-auto px-4">
           <div className="max-w-8xl mx-auto">
-            <h2
-              className="font-serif text-3xl md:text-4xl font-bold text-center mb-12
-            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
-            >
-              <DecryptedText text="Projects I'm Proud Of" />
+            <h2 className="text-teal-950 relative font-serif text-3xl md:text-4xl font-bold text-center mb-12">
+              <span className="relative z-10">
+                <DecryptedText text="Projects I'm Proud Of" />
+              </span>
+              <span
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 
+                   w-[115%] h-[160%] bg-muted/100 -z-0 rounded-lg rotate-[2deg]"
+              ></span>
             </h2>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -363,7 +378,7 @@ export default function Portfolio() {
           <div className="max-w-6xl mx-auto">
             <h2
               className="font-serif text-3xl md:text-4xl font-bold text-center mb-12
-            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
+            bg-gradient-to-r from-teal-1000 via-teal-900 to-teal-800 bg-clip-text text-transparent"
             >
               <DecryptedText text="Experience" />
             </h2>
@@ -383,7 +398,7 @@ export default function Portfolio() {
           <div className="max-w-6xl mx-auto">
             <h2
               className="font-serif text-3xl md:text-4xl font-bold text-center mb-12
-            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
+            bg-gradient-to-r from-teal-1000 via-teal-900 to-teal-800 bg-clip-text text-transparent"
             >
               <DecryptedText text="Education" />
             </h2>
@@ -455,7 +470,7 @@ export default function Portfolio() {
           <div className="max-w-4xl mx-auto">
             <h2
               className="font-serif text-3xl md:text-4xl font-bold text-center mb-12
-            bg-gradient-to-r from-blue-1000 via-blue-900 to-blue-800 bg-clip-text text-transparent"
+            bg-gradient-to-r from-teal-1000 via-teal-900 to-teal-800 bg-clip-text text-transparent"
             >
               <DecryptedText text="Let's Connect" />
             </h2>

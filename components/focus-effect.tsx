@@ -34,7 +34,7 @@ export function FocusEffect({ children, className = "" }: FocusEffectProps) {
       ref={containerRef}
       className={`relative overflow-hidden ${className}`}
       style={{
-        background: `radial-gradient(4000px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0, 4, 173, 0.15), transparent 40%)`,
+        background: `radial-gradient(4000px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(17, 94, 89, 0.15), transparent 40%)`,
       }}
     >
       {children}
