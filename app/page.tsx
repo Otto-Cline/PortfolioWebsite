@@ -266,7 +266,7 @@ export default function Portfolio() {
                   <p className="leading-relaxed">
                     My current Python tech stack is FastAPI + React +
                     TypeScript, but I also still do Java development. Recently I
-                    have been trying to improve at using OpenSearch's Java
+                    have been trying to improve at using OpenSearch&apos;s Java
                     client.
                   </p>
 
