@@ -147,8 +147,8 @@ export default function Portfolio() {
           <div className="max-w-6xl mx-auto text-center space-y-8">
             <div className="space-y-8">
               <h1
-                className="font-serif text-[8rem] md:text-[10rem] font-bold text-foreground 
-                bg-gradient-to-r from-teal-600 to-teal-900 bg-clip-text text-transparent"
+                className="font-mono text-[6rem] md:text-[8rem] font-bold text-foreground 
+                bg-gradient-to-r from-teal-900 to-teal-900 bg-clip-text text-transparent"
                 style={{
                   margin: "10px",
                 }}
@@ -156,7 +156,7 @@ export default function Portfolio() {
                 <TrueFocusText text="Otto Cline" />
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-                CS & Business at Northeastern University
+                Full Stack Software Developer
               </p>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Building real software that impacts real people (and doing other
@@ -264,9 +264,10 @@ export default function Portfolio() {
                   </p>
 
                   <p className="leading-relaxed">
-                    I&apos;m particularly interested in the intersection of
-                    technology and business, seeking opportunities in software
-                    engineering, tech consulting, and product development.
+                    My current Python tech stack is FastAPI + React +
+                    TypeScript, but I also still do Java development. Recently I
+                    have been trying to improve at using OpenSearch's Java
+                    client.
                   </p>
 
                   <div className="space-y-3">
@@ -315,8 +316,7 @@ export default function Portfolio() {
                       </h4>
                       <div className="space-y-1 text-sm">
                         <div>React</div>
-                        <div>Flask</div>
-                        <div>PostgreSQL</div>
+                        <div>FastAPI (formerly used Flask)</div>
                         <div>Docker</div>
                       </div>
                     </div>
